@@ -1,19 +1,22 @@
-import React, { Component } from "react";
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-export default class ButtonComponent extends Component {
+import React, { useState } from "react";
+import Fab from "@mui/material/Fab";
+import { useNavigate } from "react-router-dom";
 
-  constructor(props) {
-    super(props)
-  }
+export default function ButtonComponent({ color, icon, id }) {
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
-  render() {
-    return (
-      <>
-        <Fab className={this.props.color} aria-label="add">
-          {this.props.icon}
-        </Fab>
-      </>
-    );
-  }
+  return (
+    <>
+      <Fab
+        className={color}
+        aria-label="add"
+        onClick={() => {
+          return navigate(`/${id}`);
+        }}
+      >
+        {icon}
+      </Fab>
+    </>
+  );
 }

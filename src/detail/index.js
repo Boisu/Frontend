@@ -32,7 +32,11 @@ export default function Detail() {
       </div>
       <div className="d-flex justify-content-between">
         <div className="position-absolute bottom-0 right-0 text-right mb-5">
-          <ButtonComponent icon={<CheckIcon />} color="bg-success text-white" />
+          <ButtonComponent
+            icon={<CheckIcon />}
+            color="bg-success text-white"
+            id="1"
+          />
         </div>
       </div>
       <div
@@ -43,7 +47,11 @@ export default function Detail() {
       </div>
       <div className="d-flex justify-content-end">
         <div className="position-absolute bottom-0 right-0 text-right mb-5">
-          <ButtonComponent icon={<ClearIcon />} color="bg-danger text-white" />
+          <ButtonComponent
+            icon={<ClearIcon />}
+            color="bg-danger text-white"
+            id="2"
+          />
         </div>
       </div>
     </div>

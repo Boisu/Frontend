@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Form,FormControl,Button} from "react-bootstrap";
+import { Form, FormControl } from "react-bootstrap";
 
 export default class FindComponent extends Component {
   render() {
@@ -7,11 +7,10 @@ export default class FindComponent extends Component {
       <Form className="d-flex">
         <FormControl
           type="search"
-          placeholder="Search"
+          placeholder="type word here.. (soon)"
           className="me-2"
           aria-label="Search"
         />
-        <Button variant="outline-success">Search</Button>
       </Form>
     );
   }
