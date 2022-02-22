@@ -5,8 +5,6 @@ export default class ButtonComponent extends Component {
 
   constructor(props) {
     super(props)
-  
-    
   }
 
   render() {

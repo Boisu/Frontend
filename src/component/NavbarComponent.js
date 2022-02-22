@@ -7,7 +7,7 @@ export default class NavbarComponent extends Component {
       <>
         <Navbar bg="" variant="light" sticky="top">
           <Container className="justify-content-center">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
               <img
                 alt=""
                 src="../boisu.png"
