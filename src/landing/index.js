@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavbarComponent from "../component/NavbarComponent";
-import ListComponent from "../component/ListComponent";
 import FindComponent from "../component/FindComponent";
 import ButtonComponent from "../component/ButtonComponent";
 import AddIcon from '@mui/icons-material/Add';
@@ -15,7 +14,6 @@ export default class Homepage extends Component {
           <NavbarComponent />
           <div className="">
             <FindComponent />
-            <ListComponent />
           </div>
         </div>
         <div className="d-flex justify-content-between">

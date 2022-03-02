@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavbarComponent from "../component/NavbarComponent";
 import ButtonComponent from "../component/ButtonComponent";
 import CheckIcon from "@mui/icons-material/Check";
@@ -22,7 +22,7 @@ export default function Detail() {
         });
     };
     getData();
-  }, []);
+  }, [id]);
 
   return (
     <div style={{ height: "100%" }}>

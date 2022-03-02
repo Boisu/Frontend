@@ -3,7 +3,7 @@ import { ListGroup } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export default function ListComponent() {
+export default function ListComponent({ search }) {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
@@ -24,17 +24,33 @@ export default function ListComponent() {
   return (
     <ListGroup variant="flush">
       {data.map((data) => {
-        return (
-          <ListGroup.Item
-            action
-            onClick={() => {
-              return navigate(`/${data.id}`);
-            }}
-            key={data.id}
-          >
-            {data.text}
-          </ListGroup.Item>
-        );
+        if (search == "") {
+          return (
+            <ListGroup.Item
+              action
+              onClick={() => {
+                return navigate(`/${data.id}`);
+              }}
+              key={data.id}
+            >
+              {data.text}
+            </ListGroup.Item>
+          );
+        } else {
+          if ((data.text.toLowerCase()).includes(search.toLowerCase())) {
+            return (
+              <ListGroup.Item
+                action
+                onClick={() => {
+                  return navigate(`/${data.id}`);
+                }}
+                key={data.id}
+              >
+                {data.text}
+              </ListGroup.Item>
+            );
+          }
+        }
       })}
     </ListGroup>
   );
