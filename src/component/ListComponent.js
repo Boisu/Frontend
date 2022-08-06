@@ -13,7 +13,6 @@ export default function ListComponent({ search }) {
         .get(`https://message.mfaiztriputra.id/api/messages`)
         .then((res) => {
           setData(res.data.data);
-          console.log(res.data.data);
         })
         .catch((err) => {
           console.log(err);
@@ -45,7 +44,15 @@ export default function ListComponent({ search }) {
             );
           }
         } else {
-          if ((data.message.toLowerCase()).includes(search.toLowerCase()) || (data.receiver.toLowerCase()).includes(search.toLowerCase())){
+          if (!data.sender) {
+            data.sender = ""
+          }
+          if (
+            (data.message.toLowerCase()).includes(search.toLowerCase()) || 
+            (data.receiver.toLowerCase()).includes(search.toLowerCase()) ||
+            (data.sender.toLowerCase()).includes(search.toLowerCase())
+          )
+          {
             if(data.isSenderAnonymous === 0) {
               return (
                 <ListGroup.Item>
