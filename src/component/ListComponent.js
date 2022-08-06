@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { List } from "@mui/material";
 
 export default function ListComponent({ search }) {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
   useEffect(() => {
     const getData = async () => {
       axios
@@ -25,7 +22,7 @@ export default function ListComponent({ search }) {
   return (
     <ListGroup variant="flush">
       {data.map((data) => {
-        if (search == "") {
+        if (search === "") {
           if(data.isSenderAnonymous === 0) {
             return (
               <ListGroup.Item>
