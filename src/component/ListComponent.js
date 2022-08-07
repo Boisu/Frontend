@@ -25,7 +25,7 @@ export default function ListComponent({ search }) {
         if (search === "") {
           if(data.isSenderAnonymous === 0) {
             return (
-              <ListGroup.Item>
+              <ListGroup.Item key={data.id}>
                 To : <b>{data.receiver}</b><br></br>
                 From : <b>{data.sender}</b><br></br>
                 Message : {data.message} <br></br>
@@ -33,7 +33,7 @@ export default function ListComponent({ search }) {
             );
           } else {
             return (
-              <ListGroup.Item>
+              <ListGroup.Item key={data.id}>
                 To : <b>{data.receiver}</b><br></br>
                 From : <i>Someone</i><br></br>
                 Message : {data.message} <br></br>
@@ -52,7 +52,7 @@ export default function ListComponent({ search }) {
           {
             if(data.isSenderAnonymous === 0) {
               return (
-                <ListGroup.Item>
+                <ListGroup.Item key={data.id}>
                   To : <b>{data.receiver}</b><br></br>
                   From : <b>{data.sender}</b><br></br>
                   Message : {data.message} <br></br>
@@ -60,7 +60,7 @@ export default function ListComponent({ search }) {
               );
             } else {
               return (
-                <ListGroup.Item>
+                <ListGroup.Item key={data.id}>
                   To : <b>{data.receiver}</b><br></br>
                   From : <i>Someone</i><br></br>
                   Message : {data.message} <br></br>
